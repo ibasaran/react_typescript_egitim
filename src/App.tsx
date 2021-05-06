@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {Child} from './functionalComp/functionalComponent';
+import Parent from './props/Parent';
 
 
 
@@ -9,7 +9,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Child />
+        <Parent />
       </div>
     )
   }
