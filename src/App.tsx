@@ -1,36 +1,16 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import './App.css';
+import {Child} from './functionalComp/functionalComponent';
+
 
 
 class App extends React.Component {
 
-  state: {
-    names:string[],
-    name:string
-  } = {
-    names: ['İsmail', 'Mustafa'],
-    name: ''
-  }
-
-
-  add = () => {
-    let newNames = [...this.state.names, this.state.name];
-    this.setState({names:newNames, name:''});
-  }
-
   render() {
     return (
-      <Fragment>
-        <ul style={{backgroundColor:''}}>
-          {
-            this.state.names.map((x,index) => {
-              return <li key={'name' + index}>{x}</li>
-            })
-          }
-        </ul>
-        <input  value={this.state.name}  onChange={(e) => this.setState({name:e.target.value})}/>
-        <button onClick={() => this.add()}>Ekle</button>
-      </Fragment>
+      <div>
+        <Child />
+      </div>
     )
   }
 
