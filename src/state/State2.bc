@@ -1,0 +1,96 @@
+// import React, {Fragment} from 'react';
+
+
+
+// interface AppState {
+//   contacts:Array<{
+//     name:string,
+//     email:string,
+//     phone:string
+//   }>,
+//   name:string,
+//   surname: string,
+//   newContact: {
+//     name:string,
+//     email:string,
+//     phone:string
+//   },
+//   email:string,
+//   phone:string
+// }
+
+
+// class State2 extends React.Component {
+
+//   state :AppState = {
+//     contacts: [{
+//       name:'ismail',
+//       email:'demo@demo.com',
+//       phone:'12324567'
+//     }],
+//     name: 'demo',
+//     surname: '',
+//     newContact: {name:'', email:'',phone:''},
+//     email:'',
+//     phone:''
+//   }
+
+
+//   add = () => {
+//     let newContacts = [...this.state.contacts, 
+//       {name:this.state.name, email:this.state.email,phone:this.state.phone}];
+//     this.setState({contacts:newContacts, name:''});
+//   }
+
+//   render() {
+//     return (
+//       <Fragment>
+//         <table>
+//           <tbody>
+//             <tr>
+//               <th>Name</th>
+//               <th>E-mail</th>
+//               <th>Phone</th>
+//             </tr>
+//             {
+//               this.state.contacts.map( (x,index) => {
+//                return (
+//                 <tr key={'tablo' + index}>
+//                 <td>{x.name}</td>
+//                 <td>{x.email}</td>
+//                 <td>{x.phone}</td>
+//               </tr>
+//                );
+//               })
+//             }
+//           </tbody>
+//         </table>
+//         {/* <p>Name</p>
+//         <input  value={this.state.newContact.name}  onChange={(e) => this.setState({newContact: {...this.state.newContact,name: e.target.value}})}/>
+//         <p>E-mail</p>
+//         <input  value={this.state.newContact.email}  onChange={(e) => this.setState({newContact: {...this.state.newContact,email: e.target.value}})}/>
+//         <p>Phone</p>
+//         <input  value={this.state.newContact.phone}  onChange={(e) => this.setState({newContact: {...this.state.newContact,phone: e.target.value}})}/> */}
+
+//         <p>Name</p>
+//         <input  value={this.state.name}  onChange={(e) => this.setState({name:e.target.value})}/>
+//         <p>E-mail</p>
+//         <input  value={this.state.email}  onChange={(e) => this.setState({email:e.target.value})}/>
+//         <p>Phone</p>
+//         <input  value={this.state.phone}  onChange={(e) => this.setState({phone:e.target.value})}/>
+
+//         <button onClick={() => this.add()}>Ekle</button>
+//       </Fragment>
+//     )
+//   }
+
+// }
+
+
+
+// export {}
+
+
+export const Demo = () => {
+  
+}
