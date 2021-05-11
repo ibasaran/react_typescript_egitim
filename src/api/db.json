@@ -1,0 +1,46 @@
+{
+  "categories":[
+      {
+          "id":1,
+          "name":"Elektronik"
+      }
+  ],
+  "subcategories": [
+    {
+        "id":1,
+        "name": "Bilgisayar",
+        "categoryId":1
+    },
+    {
+        "id":2,
+        "name":"Televizyon",
+        "categoryId":1
+    }
+  ],
+  "users": [
+      {
+          "id":1,
+          "username":"ibasaran",
+          "name": "İsmail BAŞARAN",
+          "address": "5. cadde Ankara",
+          "email": "basaran.ismaill@gmail.com",
+          "password":1
+      }
+  ],
+  "products": [
+      {
+          "id":1,
+          "title":"Macbook pro",
+          "description": "Süper bir bilgisayar",
+          "price": 10000,
+          "categoryId":1
+      },
+      {
+          "id":2,
+          "title":"Lenovo Thinkpad p1 gen3 ",
+          "description": "İş istasyonu",
+          "price": 12000,
+          "categoryId":1
+      }
+  ]
+}
