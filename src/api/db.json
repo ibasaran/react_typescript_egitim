@@ -33,14 +33,16 @@
           "title":"Macbook pro",
           "description": "Süper bir bilgisayar",
           "price": 10000,
-          "categoryId":1
+          "categoryId":1,
+          "imgUrl":"https://shiftdelete.net/wp-content/uploads/2020/05/13-inc-macbook-pro-2020-ozellikleri-ve-fiyati.jpg"
       },
       {
           "id":2,
-          "title":"Lenovo Thinkpad p1 gen3 ",
+          "title":"Lenovo p1 gen3 ",
           "description": "İş istasyonu",
           "price": 12000,
-          "categoryId":1
+          "categoryId":1,
+          "imgUrl":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvNWXg76woSU0q8YMKe4UbhUhkPj7lM7Moa-07b4jZXlj3ybasbBOi3khyHe3MTArdtJQ&usqp=CAU"
       }
   ]
 }

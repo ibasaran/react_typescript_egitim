@@ -7,7 +7,7 @@ const BaseMenu = () => {
         {}
     ];
 
-    const start = <img alt="logo" src="showcase/images/logo.png" height="40" className="p-mr-2"></img>;
+    const start = <i className="pi pi-amazon"><strong>  Mini Amazon</strong></i>;
     const end = <InputText placeholder="Search" type="text" />;
 
     return (
