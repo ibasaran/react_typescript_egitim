@@ -10,6 +10,10 @@ import SideMenu from './sidemenu/SideMenu';
 import ProductContainer from './product/ProductContainer';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
+import ProductDetail from './product/ProductDetail';
+
+import BaseRouter from './routers/BaseRouter';
+import {BaseLayout, ProductLayout} from './layouts/Layouts';
 
 
 class App extends React.Component {
@@ -18,18 +22,9 @@ class App extends React.Component {
     return (
      <Router>
        <Switch>
-        <div className="p-grid">
-          <div className="p-col-12">
-            <BaseMenu />
-          </div>
-          <div className="p-col-3">
-            <SideMenu />
-          </div>
-          <div className="p-col-9">
-            <Route path="/:productId" component={ProductContainer} />
-            <Route exact path="/" component={ProductContainer} />
-          </div>
-        </div>
+          <BaseRouter exact path="/:productId" component={ProductContainer} layout={BaseLayout}/>
+          <BaseRouter exact path="/detail/:productId" component={ProductDetail} layout={ProductLayout}/>
+          <BaseRouter exact path="/" component={ProductContainer} layout={BaseLayout}/>
        </Switch>
      </Router>
     )

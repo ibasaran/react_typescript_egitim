@@ -39,7 +39,7 @@ const ProductContainer:React.FC<ProductContainerProps> = (props) => {
     const renderProduct = () => {
         let productList = products?.map( (product, index) => {
             return (
-                <ProductCard key={index} title={product.title} price={product.price} imgUrl={product.imgUrl}/>
+                <ProductCard key={index} id={product.id} title={product.title} price={product.price} imgUrl={product.imgUrl}/>
             )
         });
 
