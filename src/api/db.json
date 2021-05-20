@@ -1,48 +1,64 @@
 {
-  "categories":[
-      {
-          "id":1,
-          "name":"Elektronik"
-      }
+  "categories": [
+    {
+      "id": 1,
+      "name": "Elektronik"
+    }
   ],
   "subcategories": [
     {
-        "id":1,
-        "name": "Bilgisayar",
-        "categoryId":1
+      "id": 1,
+      "name": "Bilgisayar",
+      "categoryId": 1
     },
     {
-        "id":2,
-        "name":"Televizyon",
-        "categoryId":1
+      "id": 2,
+      "name": "Televizyon",
+      "categoryId": 1
     }
   ],
   "users": [
-      {
-          "id":1,
-          "username":"ibasaran",
-          "name": "İsmail BAŞARAN",
-          "address": "5. cadde Ankara",
-          "email": "basaran.ismaill@gmail.com",
-          "password":1
-      }
+    {
+      "id": 1,
+      "username": "ibasaran",
+      "name": "İsmail BAŞARAN",
+      "address": "5. cadde Ankara",
+      "email": "basaran.ismaill@gmail.com",
+      "password": 1
+    }
   ],
   "products": [
-      {
-          "id":1,
-          "title":"Macbook pro",
-          "description": "Süper bir bilgisayar",
-          "price": 10000,
-          "categoryId":1,
-          "imgUrl":"https://shiftdelete.net/wp-content/uploads/2020/05/13-inc-macbook-pro-2020-ozellikleri-ve-fiyati.jpg"
-      },
-      {
-          "id":2,
-          "title":"Lenovo p1 gen3 ",
-          "description": "İş istasyonu",
-          "price": 12000,
-          "categoryId":1,
-          "imgUrl":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvNWXg76woSU0q8YMKe4UbhUhkPj7lM7Moa-07b4jZXlj3ybasbBOi3khyHe3MTArdtJQ&usqp=CAU"
-      }
+    {
+      "id": 1,
+      "title": "Macbook pro",
+      "description": "Süper bir bilgisayar",
+      "price": 10000,
+      "subcategoryId": 1,
+      "imgUrl": "https://shiftdelete.net/wp-content/uploads/2020/05/13-inc-macbook-pro-2020-ozellikleri-ve-fiyati.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Lenovo p1 gen3 ",
+      "description": "İş istasyonu",
+      "price": 12000,
+      "subcategoryId": 1,
+      "imgUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvNWXg76woSU0q8YMKe4UbhUhkPj7lM7Moa-07b4jZXlj3ybasbBOi3khyHe3MTArdtJQ&usqp=CAU"
+    },
+    {
+      "title": "LG OLED77GX6LA 77\" 195 ",
+      "description": "Süper tv",
+      "price": "123123213213",
+      "subcategoryId": 2,
+      "imgUrl": "https://productimages.hepsiburada.net/s/41/1500/10685731012658.jpg",
+      "id": 3
+    },
+    {
+      "title": "Vestel 50U9500 50'' 127 Ekran",
+      "description": "Uydu Alıcılı 4K Ultra HD Smart LED TV",
+      "price": "12000",
+      "subcategoryId": 2,
+      "imgUrl": "https://productimages.hepsiburada.net/s/67/500/110000009296175.jpg",
+      "id": 4
+    }
   ]
 }

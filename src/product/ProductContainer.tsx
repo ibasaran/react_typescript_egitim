@@ -24,10 +24,12 @@ const ProductContainer:React.FC<ProductContainerProps> = (props) => {
        
         let url = 'http://localhost:3001/products';
 
+        console.log(props);
+
         console.log(props.match.params.productId);
 
         if (props.match.params.productId) {
-            url = 'http://localhost:3001/products?categoryId=' + props.match.params.productId;
+            url = 'http://localhost:3001/products?subcategoryId=' + props.match.params.productId;
         }
 
 
@@ -39,7 +41,12 @@ const ProductContainer:React.FC<ProductContainerProps> = (props) => {
     const renderProduct = () => {
         let productList = products?.map( (product, index) => {
             return (
-                <ProductCard key={index} id={product.id} title={product.title} price={product.price} imgUrl={product.imgUrl}/>
+                <ProductCard key={index} 
+                            id={product.id} 
+                            title={product.title} price={product.price} 
+                            imgUrl={product.imgUrl}
+                            history={props.history}
+                        />
             )
         });
 

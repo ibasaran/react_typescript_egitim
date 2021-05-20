@@ -1,6 +1,7 @@
 import React from 'react';
 import { Menubar } from 'primereact/menubar';
 import { InputText } from 'primereact/inputtext';
+import {Link} from 'react-router-dom';
 
 const BaseMenu = () => {
     const items = [
@@ -8,7 +9,7 @@ const BaseMenu = () => {
     ];
 
     const start = <i className="pi pi-amazon"><strong>  Mini Amazon</strong></i>;
-    const end = <InputText placeholder="Search" type="text" />;
+    const end = <Link  to="/admin">Administrator</Link>
 
     return (
         <div>
