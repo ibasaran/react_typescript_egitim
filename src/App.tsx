@@ -17,27 +17,30 @@ import AdminLayout from './admin/AdminLayout';
 import AdminDashboard from './admin/AdminDashboard';
 import ProductAdd from './admin/ProductAdd';
 
+import ContextApp from './examples/context/ContextApp';
+
 class App extends React.Component {
 
   render() {
     return (
-     <Router>
-       <Switch>
+    //  <Router>
+    //    <Switch>
 
-          <Route path="/admin/:path?" exact>
-            <Switch>
-                <AdminLayout>
-                  <Route path="/admin" exact component={AdminDashboard}/>
-                  <Route path="/admin/productadd" exact component={ProductAdd} />
-                </AdminLayout>
-            </Switch>
-          </Route>
+    //       <Route path="/admin/:path?" exact>
+    //         <Switch>
+    //             <AdminLayout>
+    //               <Route path="/admin" exact component={AdminDashboard}/>
+    //               <Route path="/admin/productadd" exact component={ProductAdd} />
+    //             </AdminLayout>
+    //         </Switch>
+    //       </Route>
 
-          <BaseRouter exact path="/:productId" component={ProductContainer} layout={BaseLayout}/>
-          <BaseRouter exact path="/detail/:productId" component={ProductDetail} layout={ProductLayout}/>
-          <BaseRouter exact path="/" component={ProductContainer} layout={BaseLayout}/>
-       </Switch>
-     </Router>
+    //       <BaseRouter exact path="/:productId" component={ProductContainer} layout={BaseLayout}/>
+    //       <BaseRouter exact path="/detail/:productId" component={ProductDetail} layout={ProductLayout}/>
+    //       <BaseRouter exact path="/" component={ProductContainer} layout={BaseLayout}/>
+    //    </Switch>
+    //  </Router>
+    <ContextApp />
     )
   }
 
