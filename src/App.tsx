@@ -16,31 +16,45 @@ import {BaseLayout, ProductLayout} from './layouts/Layouts';
 import AdminLayout from './admin/AdminLayout';
 import AdminDashboard from './admin/AdminDashboard';
 import ProductAdd from './admin/ProductAdd';
-
-import ContextApp from './examples/context/ContextApp';
+import ProductContext, {ProductContextProp, ProductModel} from './context/ProductContext';
+import Cart from './cart/Cart';
 
 class App extends React.Component {
 
+  addProduct = (product:ProductModel) => {
+    let newProductList = [...this.state.products] ;
+    newProductList.push(product);
+    this.setState({...this.state, products:newProductList });
+  }
+
+  state:ProductContextProp = {
+    products: [],
+    addProduct: this.addProduct
+  }
+
   render() {
     return (
-    //  <Router>
-    //    <Switch>
+     <ProductContext.Provider value={this.state}>
+       <Router>
+        <Switch>
 
-    //       <Route path="/admin/:path?" exact>
-    //         <Switch>
-    //             <AdminLayout>
-    //               <Route path="/admin" exact component={AdminDashboard}/>
-    //               <Route path="/admin/productadd" exact component={ProductAdd} />
-    //             </AdminLayout>
-    //         </Switch>
-    //       </Route>
+            <Route path="/admin/:path?" exact>
+              <Switch>
+                  <AdminLayout>
+                    <Route path="/admin" exact component={AdminDashboard}/>
+                    <Route path="/admin/productadd" exact component={ProductAdd} />
+                  </AdminLayout>
+              </Switch>
+            </Route>
 
-    //       <BaseRouter exact path="/:productId" component={ProductContainer} layout={BaseLayout}/>
-    //       <BaseRouter exact path="/detail/:productId" component={ProductDetail} layout={ProductLayout}/>
-    //       <BaseRouter exact path="/" component={ProductContainer} layout={BaseLayout}/>
-    //    </Switch>
-    //  </Router>
-    <ContextApp />
+            <BaseRouter exact path="/:productId" component={ProductContainer} layout={BaseLayout}/>
+            <BaseRouter exact path="/detail/:productId" component={ProductDetail} layout={ProductLayout}/>
+            <BaseRouter exact path="/mycart" component={Cart} layout={ProductLayout}/>
+            <BaseRouter exact path="/" component={ProductContainer} layout={BaseLayout}/>
+        </Switch>
+      </Router>
+     </ProductContext.Provider>
+    // <ContextApp />
     )
   }
 

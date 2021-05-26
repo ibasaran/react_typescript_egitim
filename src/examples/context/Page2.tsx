@@ -1,6 +1,5 @@
-import {withContext, MyContext} from './themeContext';
+import MyContext from './MyContext';
 import React, {useContext, useState} from 'react';
-import { render } from '@testing-library/react';
 
 class Page2 extends React.Component {
     state = {
@@ -10,8 +9,6 @@ class Page2 extends React.Component {
     static contextType = MyContext;
 
     changeName = () => {
-        console.log('Change name girdi');
-        console.log(this.state.newName);
         this.context.setName(this.state.newName);
     }
 
@@ -25,4 +22,4 @@ class Page2 extends React.Component {
    }
 }
 
-export default withContext(Page2);
+export default Page2;

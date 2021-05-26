@@ -9,7 +9,7 @@ interface ProductProp {
     description:string,
     price:number,
     imgUrl:string,
-    categoryId:number
+    subcategoryId:number
 }
 
 interface ProductContainerProps extends RouteComponentProps<{productId?:string}> {
@@ -46,6 +46,8 @@ const ProductContainer:React.FC<ProductContainerProps> = (props) => {
                             title={product.title} price={product.price} 
                             imgUrl={product.imgUrl}
                             history={props.history}
+                            description={product.description}
+                            subcategoryId = {product.subcategoryId}
                         />
             )
         });

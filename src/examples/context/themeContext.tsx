@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
+import ThemeProvider from './MyContextProvider';
 
 interface MyContextProp {
-    name?: string,
-    setName?: (name:string) => void
+    theme?: string,
+    setTheme?: (value:string) => void
 }
 
 
@@ -45,23 +46,24 @@ export const withContext = function<P>(WrappedComponent: typeof React.Component)
     
     return class MyContextHoc extends React.Component<P, any> {
         
-                setName = (value:string) => {
+                setTheme = (value:string) => {
                     console.log('HOC set name cagrildi', value);
-                    this.setState({name:value});
+                    this.setState({theme:value});
                 }
         
         
                 state:MyContextProp = {
-                    name: 'Ali ',
-                    setName: this.setName
+                    theme: 'Ali ',
+                    setTheme: this.setTheme
         
                 }
         
                 render() {
                     return (
-                        <MyContext.Provider value={this.state}>
-                            <WrappedComponent {...this.props}/>
-                        </MyContext.Provider>
+                        <ThemeProvider>
+                            <WrappedComponent {...this.props} />
+                            
+                        </ThemeProvider>
                     )
                 }
             }

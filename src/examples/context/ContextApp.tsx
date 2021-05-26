@@ -1,12 +1,23 @@
 import Page1 from './Page1';
 import Page2 from './Page2';
+import MyContext from './MyContext';
+import React, {useState} from 'react';
+
+
 
 const ContextApp = () => {
+
+    const [name,setName] = useState('');
+
+
+
+
     return (
-        <div>
+        <MyContext.Provider value={{name,setName}}>
             <Page1 />
             <Page2 />
-        </div>
+        </MyContext.Provider>
+        
     )
 }
 
