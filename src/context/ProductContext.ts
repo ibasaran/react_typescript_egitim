@@ -12,7 +12,10 @@ export interface ProductModel {
 
 export interface ProductContextProp {
     products: ProductModel[],
-    addProduct: (product:ProductModel) => void
+    addProduct: (product:ProductModel) => void,
+    clearProducts: () => void,
+    isLoggedIn:boolean,
+    setLoggedIn: (value:boolean) => void,
 }
 
 const productContext = React.createContext<ProductContextProp | undefined>(undefined);

@@ -2,11 +2,11 @@ import React, {useContext} from 'react';
 import { Menubar } from 'primereact/menubar';
 import { InputText } from 'primereact/inputtext';
 import {Link} from 'react-router-dom';
-import { Button } from 'primereact/button';
+
 import { Badge } from 'primereact/badge';
 import ProductContext from '../context/ProductContext';
 
-const BaseMenu = () => {
+const BaseMenu:React.FC = (props) => {
 
     const context = useContext(ProductContext);
 
@@ -14,10 +14,20 @@ const BaseMenu = () => {
         {}
     ];
 
+    const logout = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        e.preventDefault();
+        console.log(context?.isLoggedIn);
+        context?.setLoggedIn(false);
+        console.log(context?.isLoggedIn);
+        localStorage.setItem('loginToken', '');
+        
+    }
+
     const start = <i className="pi pi-amazon"><strong>  Mini Amazon</strong></i>;
     const end = ( <div>
-            <Button type="button" label="Sepetim" className="p-mr-2"><Badge value={context?.products.length} ></Badge></Button>
+            <Link to="/mycart" > Sepetim<Badge value={context?.products.length} ></Badge></Link>
             <Link  to="/admin">Administrator</Link>
+            {context?.isLoggedIn ? <button onClick={e => logout(e)}>Çıkış</button>  : <Link  to="/login">Giriş</Link>}
             </div>)
 
     return (

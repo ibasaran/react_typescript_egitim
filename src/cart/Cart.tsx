@@ -1,10 +1,22 @@
 import { DataScroller } from 'primereact/datascroller';
 import ProductContext, {ProductModel} from '../context/ProductContext';
 import {useContext} from 'react';
+import { Button } from 'primereact/button';
+import {RouteComponentProps} from 'react-router-dom';
 
-const Cart = () => {
+interface CartProps {
+    history?: RouteComponentProps['history'],
+}
+
+
+const Cart:React.FC<CartProps> = ({history}) => {
 
     const context = useContext(ProductContext);
+
+    const satinAl = () => {
+        context?.clearProducts();
+        history?.push('/checkout');
+    }
 
     const  itemTemplate = (data:ProductModel) => {
         return (
@@ -15,7 +27,7 @@ const Cart = () => {
                     <div className="product-description">{data.description}</div>
                 </div>
                 <div className="product-action">
-                    <span className="product-price">${data.price}</span>
+                    <span className="product-price">{data.price}tl</span>
                 </div>
             </div>
         );
@@ -24,6 +36,7 @@ const Cart = () => {
     return (
         <div>
              <DataScroller value={context!.products} itemTemplate={itemTemplate} rows={5} inline scrollHeight="500px" header="Scroll Down to Load More" />
+            <Button label="Satın Al" onClick={satinAl}></Button>
         </div>
     )
 }
